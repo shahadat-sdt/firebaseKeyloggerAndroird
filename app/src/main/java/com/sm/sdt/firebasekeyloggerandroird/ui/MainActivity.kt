@@ -1,7 +1,8 @@
-package com.sm.sdt.firebasekeyloggerandroird
+package com.sm.sdt.firebasekeyloggerandroird.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.sm.sdt.firebasekeyloggerandroird.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
