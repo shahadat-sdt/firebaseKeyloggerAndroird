@@ -5,9 +5,15 @@
       <map>
         <entry key="..\:/Users/devel/AndroidStudioProjects/firebaseKeyloggerAndroird/app/src/main/res/layout/activity_main.xml" value="0.3179347826086957" />
         <entry key="..\:/Users/devel/AndroidStudioProjects/firebaseKeyloggerAndroird/app/src/main/res/layout/fragment_Register.xml" value="0.37447916666666664" />
+        <entry key="..\:/Users/devel/AndroidStudioProjects/firebaseKeyloggerAndroird/app/src/main/res/layout/fragment_keylogger.xml" value="0.3625" />
+        <entry key="..\:/Users/devel/AndroidStudioProjects/firebaseKeyloggerAndroird/app/src/main/res/layout/fragment_keylogger_User.xml" value="0.36367753623188404" />
+        <entry key="..\:/Users/devel/AndroidStudioProjects/firebaseKeyloggerAndroird/app/src/main/res/layout/fragment_keylogger_user.xml" value="0.3500905797101449" />
         <entry key="..\:/Users/devel/AndroidStudioProjects/firebaseKeyloggerAndroird/app/src/main/res/layout/fragment_login.xml" value="0.3625" />
         <entry key="..\:/Users/devel/AndroidStudioProjects/firebaseKeyloggerAndroird/app/src/main/res/layout/fragment_login2.xml" value="0.3625" />
         <entry key="..\:/Users/devel/AndroidStudioProjects/firebaseKeyloggerAndroird/app/src/main/res/layout/fragment_registation.xml" value="0.33" />
+        <entry key="..\:/Users/devel/AndroidStudioProjects/firebaseKeyloggerAndroird/app/src/main/res/layout/keylog_item.xml" value="0.3625" />
+        <entry key="..\:/Users/devel/AndroidStudioProjects/firebaseKeyloggerAndroird/app/src/main/res/layout/user_item.xml" value="0.3500905797101449" />
+        <entry key="..\:/Users/devel/AndroidStudioProjects/firebaseKeyloggerAndroird/app/src/main/res/menu/keylog_menu.xml" value="0.29814814814814816" />
         <entry key="..\:/Users/devel/AndroidStudioProjects/firebaseKeyloggerAndroird/app/src/main/res/xml/accessibility_config.xml" value="0.29846014492753625" />
       </map>
     </option>
@@ -17,5 +23,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.1" />
+      </ProjectState>
+    </option>
   </component>
 </project>

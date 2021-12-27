@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_nav_host"
-    app:startDestination="@id/registationFragment">
+    app:startDestination="@id/loginFragment">
     <fragment
         android:id="@+id/registationFragment"
         android:name="com.sm.sdt.firebasekeyloggerandroird.ui.Fragment.RegistationFragment"
@@ -21,5 +21,29 @@
         <action
             android:id="@+id/action_loginFragment_to_registationFragment"
             app:destination="@id/registationFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_keyloggerUserFragment"
+            app:destination="@id/keyloggerUserFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/keyloggerFragment"
+        android:name="com.sm.sdt.firebasekeyloggerandroird.ui.Fragment.keyloggerFragment"
+        android:label="fragment_keylogger"
+        tools:layout="@layout/fragment_keylogger" >
+        <action
+            android:id="@+id/action_keyloggerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/keyloggerUserFragment"
+        android:name="com.sm.sdt.firebasekeyloggerandroird.ui.Fragment.keyloggerUserFragment"
+        android:label="fragment_keylogger_user"
+        tools:layout="@layout/fragment_keylogger_user" >
+        <action
+            android:id="@+id/action_keyloggerUserFragment_to_keyloggerFragment"
+            app:destination="@id/keyloggerFragment" />
+        <action
+            android:id="@+id/action_keyloggerUserFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
 </navigation>
