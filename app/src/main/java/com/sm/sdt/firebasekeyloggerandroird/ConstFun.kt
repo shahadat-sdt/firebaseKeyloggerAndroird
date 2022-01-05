@@ -1,13 +1,11 @@
 package com.sm.sdt.firebasekeyloggerandroird
 
-import android.content.Context
-import java.text.SimpleDateFormat
-import java.util.*
 import android.text.TextUtils
 import android.util.Patterns
-import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
-import com.sm.sdt.firebasekeyloggerandroird.ui.Fragment.LoginFragmentDirections
+import com.sm.sdt.firebasekeyloggerandroird.Consts.firebaseAuth
+import java.text.SimpleDateFormat
+import java.util.*
 import java.util.regex.Pattern
 
 
@@ -18,9 +16,6 @@ object ConstFun {
         return dateFormat.format(Calendar.getInstance().time)
     }
 
-    fun isValidEmail(target: CharSequence?): Boolean {
-        return !TextUtils.isEmpty(target) && Patterns.EMAIL_ADDRESS.matcher(target).matches()
-    }
 
     val EMAIL_ADDRESS_PATTERN: Pattern = Pattern.compile(
         "[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,256}" +
@@ -32,32 +27,12 @@ object ConstFun {
                 ")+"
     )
 
-     fun checkEmail(email: String): Boolean {
+    fun checkEmail(email: String): Boolean {
         return EMAIL_ADDRESS_PATTERN.matcher(email).matches()
     }
 
-    fun loginFirebase(
-        firebaseAuth: FirebaseAuth,
-        emailText: String,
-        passwordText: String,
-        activity: Context
-    ) {
-        firebaseAuth.signInWithEmailAndPassword(emailText, passwordText)
-            .addOnCompleteListener {
-                if (it.isSuccessful) {
-                    Toast.makeText(
-                        activity,
-                        "Login Successful",
-                        Toast.LENGTH_SHORT
-                    ).show()
-
-                }else {
-                    Toast.makeText(
-                        activity,
-                        "Incorrect Password",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
-            }
+    fun isLoggedIn(firebaseAuth: FirebaseAuth): Boolean {
+        return firebaseAuth.currentUser != null
     }
+
 }

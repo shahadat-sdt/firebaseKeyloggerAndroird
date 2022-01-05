@@ -1,10 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/clear_keylog"
+        android:icon="@drawable/ic_round_clear_all_24"
+        android:title="Clear All"
+        app:showAsAction="collapseActionView" />
     <item
         android:id="@+id/logout"
         android:icon="@drawable/ic_round_exit_to_app_24"
-        android:title="logout"
-        app:showAsAction="always" />
+        android:title="Logout"
+        app:showAsAction="collapseActionView" />
+
+    <item
+        android:id="@+id/hide_app_menu"
+        android:title="Hide App"
+        app:showAsAction="collapseActionView" />
+    <item
+        android:id="@+id/show_app_menu"
+        android:title="Show App"
+        app:showAsAction="collapseActionView" />
 </menu>

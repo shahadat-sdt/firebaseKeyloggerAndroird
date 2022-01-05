@@ -15,7 +15,7 @@ class UserAdapter(val list: ArrayList<String>, val listener: OnUserItemClicked) 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
         val view =
-            LayoutInflater.from(parent.context).inflate(R.layout.user_item, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.child_list_item, parent, false)
         return UserViewHolder(view)
     }
 
@@ -35,11 +35,11 @@ class UserAdapter(val list: ArrayList<String>, val listener: OnUserItemClicked) 
 
         @RequiresApi(Build.VERSION_CODES.O)
         override fun onClick(v: View?) {
-            listener.itemClicked(adapterPosition,list[adapterPosition])
+            listener.itemClicked(adapterPosition, list[adapterPosition])
         }
     }
 
     interface OnUserItemClicked {
-        fun itemClicked(adapterPosition: Int,item : String)
+        fun itemClicked(adapterPosition: Int, item: String)
     }
 }

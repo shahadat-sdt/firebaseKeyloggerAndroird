@@ -3,47 +3,65 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_nav_host"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/parentLoginFragment">
     <fragment
-        android:id="@+id/registationFragment"
-        android:name="com.sm.sdt.firebasekeyloggerandroird.ui.Fragment.RegistationFragment"
-        android:label="fragment_Registation"
-        tools:layout="@layout/fragment_registation" >
+        android:id="@+id/childRegistationFragment"
+        android:name="com.sm.sdt.firebasekeyloggerandroird.ui.Fragment.child.ChildRegistationFragment"
+        android:label="fragment_child_registation"
+        tools:layout="@layout/fragment_child_registation" >
         <action
-            android:id="@+id/action_registationFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
+            android:id="@+id/action_childRegistationFragment_to_childPermissionFragment"
+            app:destination="@id/childPermissionFragment" />
+        <action
+            android:id="@+id/action_childRegistationFragment_to_parentLoginFragment"
+            app:destination="@id/parentLoginFragment" />
     </fragment>
     <fragment
-        android:id="@+id/loginFragment"
-        android:name="com.sm.sdt.firebasekeyloggerandroird.ui.Fragment.LoginFragment"
-        android:label="fragment_login"
-        tools:layout="@layout/fragment_login" >
+        android:id="@+id/childPermissionFragment"
+        android:name="com.sm.sdt.firebasekeyloggerandroird.ui.Fragment.child.ChildPermissionFragment"
+        android:label="fragment_child_permission"
+        tools:layout="@layout/fragment_child_permission" >
         <action
-            android:id="@+id/action_loginFragment_to_registationFragment"
-            app:destination="@id/registationFragment" />
-        <action
-            android:id="@+id/action_loginFragment_to_keyloggerUserFragment"
-            app:destination="@id/keyloggerUserFragment" />
+            android:id="@+id/action_childPermissionFragment_to_parentLoginFragment"
+            app:destination="@id/parentLoginFragment" />
     </fragment>
     <fragment
-        android:id="@+id/keyloggerFragment"
-        android:name="com.sm.sdt.firebasekeyloggerandroird.ui.Fragment.keyloggerFragment"
-        android:label="fragment_keylogger"
-        tools:layout="@layout/fragment_keylogger" >
+        android:id="@+id/parentLoginFragment"
+        android:name="com.sm.sdt.firebasekeyloggerandroird.ui.Fragment.parent.ParentLoginFragment"
+        android:label="fragment_parent_login"
+        tools:layout="@layout/fragment_parent_login" >
         <action
-            android:id="@+id/action_keyloggerFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
+            android:id="@+id/action_parentLoginFragment_to_childRegistationFragment"
+            app:destination="@id/childRegistationFragment" />
+        <action
+            android:id="@+id/action_parentLoginFragment_to_childListFragment"
+            app:destination="@id/childListFragment" />
+        <action
+            android:id="@+id/action_parentLoginFragment_to_childPermissionFragment"
+            app:destination="@id/childPermissionFragment" />
     </fragment>
     <fragment
-        android:id="@+id/keyloggerUserFragment"
-        android:name="com.sm.sdt.firebasekeyloggerandroird.ui.Fragment.keyloggerUserFragment"
-        android:label="fragment_keylogger_user"
-        tools:layout="@layout/fragment_keylogger_user" >
+        android:id="@+id/childKeylogFragment"
+        android:name="com.sm.sdt.firebasekeyloggerandroird.ui.Fragment.child.ChildKeylogFragment"
+        android:label="fragment__child_keylog"
+        tools:layout="@layout/fragment__child_keylog" >
         <action
-            android:id="@+id/action_keyloggerUserFragment_to_keyloggerFragment"
-            app:destination="@id/keyloggerFragment" />
+            android:id="@+id/action_childKeylogFragment_to_parentLoginFragment"
+            app:destination="@id/parentLoginFragment" />
+        <argument
+            android:name="childName"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/childListFragment"
+        android:name="com.sm.sdt.firebasekeyloggerandroird.ui.Fragment.child.ChildListFragment"
+        android:label="fragment_child_list"
+        tools:layout="@layout/fragment_child_list" >
         <action
-            android:id="@+id/action_keyloggerUserFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
+            android:id="@+id/action_childListFragment_to_childKeylogFragment"
+            app:destination="@id/childKeylogFragment" />
+        <action
+            android:id="@+id/action_childListFragment_to_parentLoginFragment"
+            app:destination="@id/parentLoginFragment" />
     </fragment>
 </navigation>
